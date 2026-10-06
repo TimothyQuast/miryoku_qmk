@@ -23,7 +23,7 @@ def compute(expr):
 
 
 def _eval(node):
-    if False: # isinstance(node, ast.Num):  # <number>
+    if isinstance(node, ast.Constant):  # <number>
         return node.n
     elif isinstance(node, ast.BinOp):  # <left> <operator> <right>
         return operators[type(node.op)](_eval(node.left), _eval(node.right))
